@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using MoodleHack.API.Services;
 using MoodleHack.Infrastructure.Data;
@@ -22,7 +21,7 @@ namespace MoodleHack.API
             services.AddDbContext<AppDbContext>(x =>
                 x.UseNpgsql(_configuration["POSTGRESQL"],
                     npgsql => npgsql.MigrationsAssembly(nameof(MoodleHack.Infrastructure.Data))));
-            services.Configure<EmailConfiguration>(_configuration.GetSection("EMAIL"));
+            services.Configure<EmailConfiguration>(_configuration.GetSection("MAIL"));
             services.AddScoped<SdoApiClient>();
             services.AddScoped<EmailClient>();
         }

