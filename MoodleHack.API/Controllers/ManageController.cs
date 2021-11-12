@@ -29,7 +29,7 @@ namespace MoodleHack.API.Controllers
         }
         //Limit 5 unsuccess queries
         [HttpGet]
-        public async Task<IActionResult> TryAddLinks([FromQuery] string moodleSession)
+        public async Task<IActionResult> AddLink([FromQuery] string moodleSession)
         {
             var proxyIp = HttpContext.Request.Headers["X-Real-IP"].ToString();
             var senderIp = string.IsNullOrEmpty(proxyIp) ? HttpContext?.Connection.RemoteIpAddress?.ToString() : proxyIp;
