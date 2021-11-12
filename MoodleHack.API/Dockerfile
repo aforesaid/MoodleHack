@@ -6,8 +6,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["MoodleHack.API/MoodleHack.API.csproj", "MoodleHack.API/"]
-COPY ["MoodleHack.API/MoodleHack.Domain.csproj", "MoodleHack.Domain/"]
-COPY ["MoodleHack.API/MoodleHack.Infrastructure.Data.csproj", "MoodleHack.Infrastructure.Data/"]
+COPY ["MoodleHack.Domain/MoodleHack.Domain.csproj", "MoodleHack.Domain/"]
+COPY ["MoodleHack.Infrastructure.Data/MoodleHack.Infrastructure.Data.csproj", "MoodleHack.Infrastructure.Data/"]
 
 RUN dotnet restore "MoodleHack.API/MoodleHack.API.csproj"
 COPY . .
