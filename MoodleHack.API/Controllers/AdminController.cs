@@ -32,22 +32,17 @@ namespace MoodleHack.API.Controllers
 
         public async Task<IActionResult> SyncAccounts(string token)
         {
-            if (_configuration["TOKEN"] == token)
+            if (_configuration["TOKEN"] != token) return Forbid();
+            foreach (var account in _dbContext.Users.AsQueryable().Where(x => x.IsActive))
             {
-                foreach (var account in _dbContext.Users.AsQueryable().Where(x => x.IsActive))
-                {
-                    var valid = await _sdoApiClient.Validate(account.Cookie);
-                    if (!valid)
-                    {
-                        account.IsActive = false;
-                        _dbContext.Update(account);
-                    }
-                }
-                await _dbContext.SaveChangesAsync();
-                return Ok(_dbContext.Users.Where(x => x.IsActive).ToArray());
+                var valid = await _sdoApiClient.Validate(account.Cookie);
+                if (valid) continue;
+                account.IsActive = false;
+                _dbContext.Update(account);
             }
-
-            return Forbid();
+            await _dbContext.SaveChangesAsync();
+            return Ok(_dbContext.Users.Where(x => x.IsActive).ToArray());
+            
         }
         //Remove all
         //Get all accounts with roles

