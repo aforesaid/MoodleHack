@@ -9,7 +9,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e53e39a3-89a3-43c4-aaff-4b8643d87469" name="Changes" comment="Init" />
+    <list default="true" id="e53e39a3-89a3-43c4-aaff-4b8643d87469" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MoodleHack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoodleHack/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/MoodleHack.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/MoodleHack.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/Services/EmailClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/Services/EmailClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/Services/SdoApiClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/Services/SdoApiClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/obj/Debug/net5.0/MoodleHack.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/obj/Debug/net5.0/MoodleHack.API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/obj/MoodleHack.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/obj/MoodleHack.API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.Domain/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/MoodleHack.Infrastructure.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/MoodleHack.Infrastructure.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/Debug/net5.0/MoodleHack.Infrastructure.Data.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/Debug/net5.0/MoodleHack.Infrastructure.Data.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/MoodleHack.Infrastructure.Data.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/MoodleHack.Infrastructure.Data.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MoodleHack.Infrastructure.Data/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +38,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1caea5797bc04e55adebcc8011b21ab81a188/3/OptionsServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20mIAoarj1k95HbqkPGY3JOGPKb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -96,7 +120,8 @@
       <option name="presentableId" value="Default" />
       <updated>1636643197747</updated>
       <workItem from="1636643207150" duration="33000" />
-      <workItem from="1636670764809" duration="5731000" />
+      <workItem from="1636670764809" duration="7302000" />
+      <workItem from="1636711746856" duration="371000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1636676418274</created>
@@ -105,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636676418274</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add docker-compose">
+      <created>1636676767223</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636676767223</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,10 +156,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="Add docker-compose" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add docker-compose" />
   </component>
 </project>

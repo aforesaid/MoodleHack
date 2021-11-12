@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace MoodleHack.API.Services
 {
@@ -11,17 +12,17 @@ namespace MoodleHack.API.Services
         private readonly SmtpClient _smtpClient;
         private readonly EmailConfiguration _configuration;
 
-        public EmailClient(EmailConfiguration configuration)
+        public EmailClient(IOptions<EmailConfiguration> config)
         {
-            _configuration = configuration;
+            _configuration = config.Value;
 
             _smtpClient = new SmtpClient
             {
-                Host = configuration.Host,
-                Port = configuration.Port,
+                Host = _configuration.Host,
+                Port = _configuration.Port,
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(configuration.Email, configuration.Password)
+                Credentials = new NetworkCredential(_configuration.Email, _configuration.Password)
             };
         }
         public Task SendMessage(string toEmail, string toDisplayName, string message)

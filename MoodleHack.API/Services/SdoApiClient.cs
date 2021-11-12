@@ -23,6 +23,7 @@ namespace MoodleHack.API.Services
                 Method = HttpMethod.Get,
                 RequestUri = new Uri(url)
             };
+            request.Headers.Add("Cookie",$"MoodleSession={moodleSession}");
             var response = await _httpClient.SendAsync(request);
             var responseString = await response.Content.ReadAsStringAsync();
             return !responseString.Contains("Для продолжения необходима авторизация") && response.IsSuccessStatusCode;
@@ -41,6 +42,7 @@ namespace MoodleHack.API.Services
                 RequestUri = new Uri(url),
                 Content = content
             };
+            request.Headers.Add("Cookie",$"MoodleSession={moodleSession}");
             var response = await _httpClient.SendAsync(request);
             return response.IsSuccessStatusCode;
         }
